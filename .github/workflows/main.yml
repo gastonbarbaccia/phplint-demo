@@ -22,6 +22,8 @@ jobs:
         with:
           path: .
           options: --exclude=*.log --json=result.json
+      - name: Code Style
+        uses: creyD/prettier_action@v4.2
       - name: Upload Test results
         uses: actions/upload-artifact@master
         with:
