@@ -11,11 +11,13 @@ on:
       - develop
    
 jobs:
-  Lint:
+  test:
     runs-on: ubuntu-latest
     name: Lint Scan
     steps:
       - name: Checkout
+        uses: actions/checkout@master
+      - name: Lint Scan
         uses: overtrue/phplint@8.1
         with:
           path: .
