@@ -21,9 +21,9 @@ jobs:
         uses: overtrue/phplint@8.1
         with:
           path: .
-          options: --exclude=*.log --json=resulta.json
+          options: --exclude=*.log --json=result.json
       - name: Upload Test results
         uses: actions/upload-artifact@master
         with:
            name: Lint Report
-           path: ${{github.workspace}}/
+           path: ${{github.workspace}}/result.json
