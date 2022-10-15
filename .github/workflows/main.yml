@@ -1,0 +1,22 @@
+name: Code Quality
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+   
+jobs:
+  Lint:
+    runs-on: ubuntu-latest
+    name: Lint Scan
+    steps:
+      - name: Checkout
+        uses: overtrue/phplint@8.1
+        with:
+          path: .
+          options: --exclude=*.log
