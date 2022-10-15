@@ -31,5 +31,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Code Style Scan
     steps:        
+       - uses: actions/checkout@v2
        - name: Code Style
          uses: creyD/prettier_action@v4.2
