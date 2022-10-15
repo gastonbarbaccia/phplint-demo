@@ -15,8 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Lint Scan
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
       - name: Lint Scan
         uses: overtrue/phplint@8.1
         with:
@@ -36,4 +37,9 @@ jobs:
          uses: creyD/prettier_action@v4.2
          with:
             # This part is also where you can pass other options, for example:
-            prettier_options: --write **/*.{js,md}
+            prettier_options: --write .
+       - name: Commit changes
+         uses: stefanzweifel/git-auto-commit-action@v4
+         with:
+           commit_message: Apply formatting changes
+           branch: ${{ github.head_ref }}
