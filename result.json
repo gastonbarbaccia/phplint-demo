@@ -1,0 +1,1 @@
+{"status":"success","options":{"jobs":5,"path":["."],"exclude":["*.log"],"extensions":["php"],"warning":false,"json":"result.json"},"errors":[],"time_usage":"58 secs","memory_usage":"56.0 MiB","using_cache":false,"files_count":6555}
